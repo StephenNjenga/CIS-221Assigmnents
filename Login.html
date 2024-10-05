@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width">
+    <title>Login Form</title>
+    <style >
+        h1{
+            color:blue;
+        }
+        body {
+            text-align: center;
+            justify-content: center;
+            display:flex;
+        margin-left:auto;
+        margin-right:auto;
+            outline:solid grey;
+            outline-style: inset;
+            width:300px;
+            height:300px;
+            margin-top: 20%;
+            margin-bottom: 30%;
+            background-image: url("gritty/wbv.jpg");
+            background-size: cover;
+            box-shadow: 30px;
+        }
+        .Login {
+            background:green;
+            padding:10px;
+        }
+        .Cancel {
+            background:red;
+            padding:10px;
+        }
+        button {
+         color:white;
+         border-color:blue;
+         padding:7px;
+         border-radius:20px;
+        }
+        .Save{
+           color:green;
+        }
+        .forgot{
+           font-style:italic;
+        }
+        .Name {
+            background: transparent;
+            border-radius:20px;
+            padding:8px;
+            box-shadow: 30px;
+        }
+        .Password {
+            background: transparent;
+            border-radius:20px;
+            padding:8px;
+        }
+       
+    </style>
+</head>
+<body>
+     <form name="login" method="post" acton="login.php" >
+ 
+ <h1>LOGIN FORM</h1>
+       <input type ="text"
+       name ="username"
+        placeholder="Enter your Username"
+        class="Name">
+        <br>
+        <br>
+        <input type ="text"
+        name ="password"
+        placeholder="Password"class="Password">
+        <br>
+        <br>
+        <label class="Save"><input type="checkbox">Remember me.</label>
+        <a href="reset.html" class="forgot">Forgot Password?</a>
+        <br>
+        <br>
+        <button type ="submit" name="submit"class="Login">
+           😁 LOGIN 
+        </button>
+        <button type ="reset" name="reset"class="Cancel">
+            😥CANCEL 
+        </button>
+        <br>
+        
+    </form>
+    
+</body>
+</html>
