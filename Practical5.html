@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: indigo;
+        }
+        .login {
+            border: 3px solid blue;
+            max-width: max-content;
+            padding: 20px 30px;
+            margin: 10px auto;
+            border-radius:20px;
+            background-color:violet;
+        }
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: green;
+            margin: 10px auto;
+          color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <form>
+            <!-- Email input -->
+            <label for="email">Enter Your Email: </label>
+            <input type="email" name="email" id="email" />
+            <br/><br>
+
+            <!-- Password input -->
+            <label for="password">Enter Your Password: </label>
+            <input type="password" name="password" id="password" />
+            <br/><br>
+
+            <!-- Radio button -->
+            <label>Select Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <br/><br>
+
+            <!-- Checkbox -->
+            <label for="subscribe">Subscribe to newsletter:</label>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <br/><br>
+
+            <!-- Dropdown list box / Datalist -->
+            <label for="country">Choose your country:</label>
+            <input list="countries" id="country" name="country" />
+            <datalist id="countries">
+                <option value="USA">
+                <option value="Canada">
+                <option value="UK">
+                <option value="Australia">
+                <option value="Kenya">
+            </datalist>
+            <br/><br>
+
+            <!-- List Box -->
+            <label for="languages">Choose your favorite programming language(s):</label>
+            <select id="languages" name="languages" multiple size="4">
+                <option value="html">HTML</option>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+                <option value="csharp">C#</option>
+            </select>
+            <br/><br>
+            <!-- Search field -->
+            <label for="search">Search something:</label>
+            <input type="search" id="search" name="search">
+            <br/><br>
+            <!-- URL field -->
+            <label for="website">Enter your website URL:</label>
+            <input type="url" id="website" name="website">
+            <br/><br>
+            <!-- Buttons -->
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+            <input type="button" value="LOGIN" />
+        </form>
+    </div>
+</body>
+</html>
