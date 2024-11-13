@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+        nav {
+            width: 200px;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding-top: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover {
+            background: #575757;
+        }
+        .container {
+            margin-left: 220px;
+            padding: 20px;
+            flex: 1;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: #77aaff 3px solid;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .module {
+            margin-bottom: 20px;
+        }
+        .module h2 {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px;
+        }
+        .module form {
+            padding: 10px;
+        }
+        .module form input[type="text"],
+        .module form input[type="password"],
+        .module form input[type="email"],
+        .module form input[type="number"],
+        .module form input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .module form input[type="submit"] {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#finance">Finance</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#procurement">Procurement</a></li>
+            <li><a href="#leave">Leave</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Employee Management System</h1>
+        </header>
+
+        <div class="main">
+            <div id="registration" class="module">
+                <h2>Registration</h2>
+                <form>
+                    <input type="text" placeholder="Employee ID" required>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+
+            <div id="login" class="module">
+                <h2>Login</h2>
+                <form>
+                    <input type="text" placeholder="Employee ID" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+
+            <div id="finance" class="module">
+                <h2>Finance</h2>
+                <form>
+                    <input type="text" placeholder="Transaction ID" required>
+                    <input type="text" placeholder="Account Name" required>
+                    <input type="number" placeholder="Amount" required>
+                    <input type="date" placeholder="Transaction Date" required>
+                    <input type="text" placeholder="Description" required>
+                    <input type="submit" value="Record Transaction">
+                </form>
+      
+            </div>
+
+            <div id="departments" class="module">
+                <h2>Departments</h2>
+                <form>
+                    <input type="text" placeholder="Department ID" required>
+                    <input type="text" placeholder="Department Name" required>
+                    <input type="submit" value="Add Department">
+                </form>
+        
+            </div>
+
+            <div id="procurement" class="module">
+                <h2>Procurement</h2>
+                <form>
+                    <input type="text" placeholder="Procurement ID" required>
+                    <input type="text" placeholder="Item Name" required>
+                    <input type="number" placeholder="Quantity" required>
+                    <input type="date" placeholder="Procurement Date" required>
+                    <input type="text" placeholder="Supplier" required>
+                    <input type="submit" value="Add Procurement">
+                </form>
+            </div>
+
+            <div id="leave" class="module">
+                <h2>Leave</h2>
+                <form>
+                    <input type="text" placeholder="Leave ID" required>
+                    <input type="text" placeholder="Employee ID" required>
+                    <input type="date" placeholder="Start Date" required>
+                    <input type="date" placeholder="End Date" required>
+                    <input type="text" placeholder="Reason" required>
+                    <input type="submit" value="Apply for Leave">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

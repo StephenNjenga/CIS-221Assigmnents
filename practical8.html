@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+</head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+    body{
+        min-height: 100vh;
+        background: rgb(224, 239, 243);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .wrapper{
+        margin: 25px;
+        background-color: #faf9f9;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.185);
+        padding: 50px;
+        margin: 30px 0;
+
+
+   
+    }
+    .search-bar input{
+       width: 70%;
+       height: 50px;
+       background-color: rgb(224, 239, 243);
+       outline: none;
+       border: none;
+       border-radius: 5px;
+       margin-left: 10px;
+       margin-top: 20px;
+       margin-bottom: 40px;
+       
+ }
+ .search-bar a {
+    width: 100px;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: rgb(149, 6, 206);
+    padding: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+ }
+ h1{
+    font-weight: 800;
+   
+ }
+ p{
+    color: #686161;
+    line-height: 1.5;
+    
+ }
+.container{
+    width: 300px;
+   
+    float: right;
+   
+}
+.Highlight {
+    color: blue;
+    text-decoration: underline;
+}
+ .W{
+     color:blue;
+ }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="search-bar">
+            <input type="text" placeholder="   Enter a city...">
+           
+                <a href="#">Search</a>
+
+            </label>
+     
+    </div>
+
+    <hr>
+    <br>
+    <div class="container">
+        <p><span style="font-size: 55px;">☀️</span> <span style="font-size: 75px; color: #000;">24°C</span></p>
+    </div>
+    <h1>Paris</h1>
+    <br>
+     <p>Tuesday 07:45, moderate rain</p>
+     <p>Humidity: <span class="W">87%</span>, Wind: <span class="W">7.2km/h</span></p>
+
+<br>
+<br>
+<br>
+<hr>
+<p>This project was coded by <span class="Highlight">Stephen Njenga</span> and is on <span class="Highlight">Github</span> and <span class="Highlight">hosted on Netlify</span></p>
+  
+</div>
+</body>
+</html>
