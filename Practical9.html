@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #f9f7fe;
+      margin: 100px auto;
+      font-size: 16px;
+      color: rgb(123, 3, 123);
+      text-transform: capitalize;
+      text-align: center;
+    }
+    .weather-app {
+      border-top: 5px solid rgb(175, 172, 172);
+      padding: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 30px;
+      background-color: rgb(175, 172, 172);
+    }
+    .form-input {
+      font-weight: bold;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+    .form-button {
+      border: none;
+      padding: 10px 15px;
+      background-color: rgb(123, 3, 123);
+      color: whitesmoke;
+      border-radius: 9px;
+      cursor: pointer;
+    }
+    .weather-data {
+      color: rgb(81, 49, 10);
+      font-weight: bold;
+      line-height: 20px;
+      margin-top: 20px;
+    }
+    .weather-app-temperature-container {
+      font-size: 28px;
+      margin-top: 16px;
+    }
+    .weather-icon {
+      margin: 10px 0;
+      width: 100px;
+      height: 100px;
+    }
+    footer {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    a {
+      color: rgb(123, 3, 123);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-app">
+    <h2>Welcome to our Weather Application</h2>
+    <form id="search-form">
+      <input 
+        type="search" 
+        name="city" 
+        id="city-name" 
+        class="form-input" 
+        placeholder="Enter city name" 
+        required>
+      <button type="submit" class="form-button">Search</button>
+    </form>
+    <div class="weather-data">
+      <h3 id="city-displayed">City Name</h3>
+      <div id="weather-icon-container">
+        <img id="weather-icon" class="weather-icon" alt="Weather Icon">
+      </div>
+      <div class="weather-app-temperature-container">
+        <div id="current-temperature-value">12˚C</div>
+      </div>
+      <div id="weather-description">Scattered clouds</div>
+      <div id="humidity">Humidity: 66%</div>
+      <div id="wind-speed">Wind Speed: 4.3 knots</div>
+    </div>
+  </div>
+  <footer>
+    Coded by <a href="https://github.com/Stephen" target="_blank">Stephen Njenga</a>, 
+    and hosted on <a href="https://rennishweatherapp.netlify.app/" target="_blank">Netlify</a>.
+  </footer>
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  <script>
+    const searchForm = document.querySelector("#search-form");
+    const cityNameInput = document.querySelector("#city-name");
+    const cityDisplayed = document.querySelector("#city-displayed");
+    const temperatureValue = document.querySelector("#current-temperature-value");
+    const weatherDescription = document.querySelector("#weather-description");
+    const humidity = document.querySelector("#humidity");
+    const windSpeed = document.querySelector("#wind-speed");
+    const weatherIcon = document.querySelector("#weather-icon");
+
+    const apiKey = "73dof19a030ad06t05b21e8521b4860f";
+
+    function formatDate(date) {
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const day = days[date.getDay()];
+      const hours = date.getHours().toString().padStart(2, "0");
+      const minutes = date.getMinutes().toString().padStart(2, "0");
+      return `${day}, ${hours}:${minutes}`;
+    }
+
+    function refreshWeather(response) {
+      const data = response.data;
+      cityDisplayed.textContent = data.city;
+      temperatureValue.textContent = `${Math.round(data.temperature.current)}˚C`;
+      weatherDescription.textContent = data.condition.description;
+      humidity.textContent = `Humidity: ${data.temperature.humidity}%`;
+      windSpeed.textContent = `Wind Speed: ${data.wind.speed} knots`;
+      
+      // Update weather icon
+      weatherIcon.src = data.condition.icon_url;
+      weatherIcon.alt = data.condition.description;
+    }
+
+    function searchCity(city) {
+      const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+      axios.get(apiUrl).then(refreshWeather).catch(error => {
+        alert("Unable to fetch weather data. Please check the city name and try again.");
+      });
+    }
+
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const city = cityNameInput.value.trim();
+      if (city) {
+        searchCity(city);
+      }
+    });
+  </script>
+</body>
+</html>
