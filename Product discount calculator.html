@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Discount Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Product Discount Calculator</h2>
+    <label for="description">Product Description:</label>
+    <input type="text" id="description" name="description" placeholder="Enter product description">
+
+    <label for="list-price">List Price (KSh):</label>
+    <input type="number" id="list-price" name="list-price" placeholder="Enter list price">
+
+    <label for="discount-percentage">Discount Percentage (%):</label>
+    <input type="number" id="discount-percentage" name="discount-percentage" placeholder="Enter discount percentage">
+
+    <button onclick="calculateDiscount()">Calculate</button>
+    <button onclick="resetForm()">Reset</button>
+
+    <p class="result" id="discount-amount">Discounted Amount: </p>
+    <p class="result" id="discounted-price">Discounted Price: </p>
+</div>
+
+<script>
+    function calculateDiscount() {
+        var listPrice = parseFloat(document.getElementById('list-price').value) || 0;
+        var discountPercentage = parseFloat(document.getElementById('discount-percentage').value) || 0;
+        var discountAmount = (listPrice * discountPercentage) / 100;
+        var discountedPrice = listPrice - discountAmount;
+
+        document.getElementById('discount-amount').innerText = "Discounted Amount: KSh " + discountAmount.toFixed(2);
+        document.getElementById('discounted-price').innerText = "Discounted Price: KSh " + discountedPrice.toFixed(2);
+    }
+
+    function resetForm() {
+        document.getElementById('description').value = '';
+        document.getElementById('list-price').value = '';
+        document.getElementById('discount-percentage').value = '';
+        document.getElementById('discount-amount').innerText = 'Discounted Amount: ';
+        document.getElementById('discounted-price').innerText = 'Discounted Price: ';
+    }
+</script>
+
+</body>
+</html>

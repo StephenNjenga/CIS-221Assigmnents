@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 322</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .exam-sheet {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .average {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-sheet">
+        <h1>Exam App</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Exam 322</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="name1" placeholder="Enter name"></td>
+                <td><input type="number" id="score1" placeholder="Enter score"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name2" placeholder="Enter name"></td>
+                <td><input type="number" id="score2" placeholder="Enter score"></td>
+            </tr>
+            <tr class="average">
+                <td>Average</td>
+                <td id="average">-</td>
+            </tr>
+        </table>
+        <button onclick="calculateAverage()">Calculate Average</button>
+        <p>Thanks for using the <strong>Exam App</strong></p>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            const score1 = parseFloat(document.getElementById('score1').value) || 0;
+            const score2 = parseFloat(document.getElementById('score2').value) || 0;
+            const average = (score1 + score2) / 2;
+            document.getElementById('average').innerText = average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
